@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My First Webpage</title>
+    <style>
+        body{
+            text-align: center
+        }
+    </style>
+</head>
+<body>
+    <h1>Email Spam</h1>
+    <form method="post" action="/predict">
+        <textarea placeholder="Enter your email body" rows="15" cols="35" name="email-content">{{text}}</textarea>
+        <div>
+            <button>Check Spam</button>
+            <a href='/'>Reset</a>
+        </div>
+    </form>
+    {%if prediction ==1: %}
+        <h2>Okay</h2>
+    {%elif prediction ==-1: %}
+        <h2>Spam</h2>
+    {% endif %}
+</body>
+</html>
